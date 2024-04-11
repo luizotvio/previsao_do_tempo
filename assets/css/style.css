@@ -8,8 +8,8 @@
 }
 
 :root {
-    --primary-color: #201e27ec;
-    --secondary-color: #352F44;
+    --primary-color: #201e27bb;
+    /* --secondary-color: #352F44; */
     --tertiary-color: #5C5470;
     --quaternary-color: #DBD8E3;
 }
@@ -30,7 +30,6 @@ body {
 
 
 section {
-    width: 100vh;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -38,9 +37,9 @@ section {
     margin: 0 auto;
 }
 
-.container {
+.weather-container {
     width: 350px;
-    height: 300px;
+    min-height: 300px;
     background: transparent;
     background-color: var(--primary-color);
     backdrop-filter: blur(10%);
@@ -49,7 +48,7 @@ section {
     text-align: center;
 }
 
-.search, .btn-search {
+.search-input, .search-btn {
     padding: 5px 5px;
     margin: 20px 10px;
     border-radius: 10px;
@@ -60,19 +59,19 @@ section {
     color: var(--quaternary-color);
 }
 
-.search {
-    width: 50%;
+.search-input {
+    width: 60%;
 }
 
-.search::placeholder {
+.search-input::placeholder {
     color: var(--quaternary-color);
 }
 
-.btn-search {
+.search-btn {
     width: 30px;
 }
 
-.btn-search:hover {
+.search-btn:hover {
     cursor: pointer;
     background: var(--tertiary-color);
 }
@@ -81,8 +80,11 @@ section {
     color:var(--quaternary-color)
 }
 
-.info-tempo {
+.info-weather {
     text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 20px 20px;
     color: var(--quaternary-color);
 }
@@ -91,7 +93,21 @@ section {
     font-size: 30px
 }
 
-.temp, .bi-cloud, .umidade {
-    font-size: 20px;
-    padding: 20px 0;
+.temp, .ico, .umidade {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Responsive mobile */
+
+@media (max-width: 610px) {
+
+    .weather-container {
+        max-width: 80%;
+        min-height: calc(60% - 20px);
+    }
+
+    .cidade {
+        font-size: 1.5rem;
+    }
 }
